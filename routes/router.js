@@ -41,11 +41,12 @@ router.post("/save", function (req, res) {
         address: address,
         city: city,
         state: state,
-        zip: zip,
-        
+        zip: zip      
 
     });
-
+    user.save((err, savedInstance) => {
+        res.json(savedInstance);
+    });
 
 })
 module.exports = router;
